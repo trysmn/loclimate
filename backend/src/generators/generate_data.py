@@ -38,7 +38,7 @@ def convert_to_json(csv_file_path):
 
 
 def write_to_json(climate_dict):
-    with open('climate_data.json', 'w') as json_file:
+    with open('../../../climate_data.json', 'w') as json_file:
         json.dump(climate_dict, json_file)
 
 

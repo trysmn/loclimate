@@ -1,6 +1,4 @@
-import pandas as pd
-
-from generate_data import convert_to_dict, convert_to_json, write_to_json
+from src.generators.generate_data import convert_to_dict, convert_to_json, write_to_json
 import os
 
 
@@ -129,4 +127,4 @@ def test_writing_to_json():
 
     result = write_to_json(test_dict)
 
-    assert os.path.exists('climate_data.json')
+    assert os.path.exists('../../../climate_data.json')
