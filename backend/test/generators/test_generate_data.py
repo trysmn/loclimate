@@ -1,6 +1,7 @@
 import pandas as pd
 
-from generate_data import convert_to_dict, convert_to_json
+from generate_data import convert_to_dict, convert_to_json, write_to_json
+import os
 
 
 def test_generate_data():
@@ -63,8 +64,8 @@ def test_generate_correct_json_structure():
     test_data = "./test_csv.csv"
 
     expected = {
-        1973: {
-            1: {
+        "1973": {
+            "1": {
                 'max_temp': 7.7,
                 'min_temp': 2.4,
                 'mean_temp': 5.1,
@@ -72,8 +73,8 @@ def test_generate_correct_json_structure():
                 'total_sunshine': 43.2
             }
         },
-        1986: {
-            5: {
+        "1986": {
+            "5": {
                 'max_temp': 6.8,
                 'min_temp': 2.2,
                 'mean_temp': 4.5,
@@ -81,8 +82,8 @@ def test_generate_correct_json_structure():
                 'total_sunshine': 36.3
             }
         },
-        2008: {
-            3: {
+        "2008": {
+            "3": {
                 'max_temp': 7.3,
                 'min_temp': 0.5,
                 'mean_temp': 3.9,
@@ -90,15 +91,15 @@ def test_generate_correct_json_structure():
                 'total_sunshine': 39.3
             }
         },
-        1998: {
-            11: {
+        "1998": {
+            "11": {
                 'max_temp': 7.4,
                 'min_temp': 3.5,
                 'mean_temp': 4.5,
                 'total_rainfall': 80.5,
                 'total_sunshine': 43.5
             },
-            12: {
+            "12": {
                 'max_temp': 9.4,
                 'min_temp': 3.5,
                 'mean_temp': 6.5,
@@ -111,3 +112,21 @@ def test_generate_correct_json_structure():
     result = convert_to_json(test_data)
 
     assert result == expected
+
+
+def test_writing_to_json():
+    test_dict = {
+        "1973": {
+            "1": {
+                'max_temp': 7.7,
+                'min_temp': 2.4,
+                'mean_temp': 5.1,
+                'total_rainfall': 88.0,
+                'total_sunshine': 43.2
+            }
+        }
+    }
+
+    result = write_to_json(test_dict)
+
+    assert os.path.exists('climate_data.json')
