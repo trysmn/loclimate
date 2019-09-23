@@ -8,8 +8,8 @@ describe("NavBar", () => {
         const navBar = create(<NavBar />)
         // When
         const instance = navBar.root
-        const h1 = instance.findByType("h1")
+        const div = instance.findByType("div")
         // Then
-        expect(h1.props.children).toBe("loclimate")
+        expect(div.props.children).toBe("loclimate")
     })
 })

@@ -1,7 +1,12 @@
 import React from 'react'
+import './NavBar.css'
 
 export class NavBar extends React.Component {
     render() {
-        return <h1>loclimate</h1>
+        return (
+            <div className="title">
+                loclimate
+            </div>
+        )
     }
 }

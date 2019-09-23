@@ -1,0 +1,10 @@
+.title {
+    text-align: left;
+    font-family: 'Overpass Mono', monospace;
+    font-size: 64px;
+    color: white;
+    background-color: black;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
