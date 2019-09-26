@@ -2,6 +2,7 @@ import React from 'react';
 import Location from "./Location/Location";
 import DropdownContextProvider from "../contexts/DropdownContext";
 import Dropdown from "./Dropdown/Dropdown";
+import Submit from "./Submit/Submit";
 
 function ViewHeader () {
     const climateJson = require('../climate_data');
@@ -17,6 +18,7 @@ function ViewHeader () {
             <DropdownContextProvider>
                 <Dropdown title="select year" years={years} />
             </DropdownContextProvider>
+            <Submit />
         </div>
     )
 }
