@@ -10,9 +10,9 @@ function ViewHeader () {
             <DropdownContextProvider>
                 <Dropdown title="select month"/>
             </DropdownContextProvider>
-            {/*<DropdownContextProvider>*/}
-            {/*    <Dropdown title="select year"/>*/}
-            {/*</DropdownContextProvider>*/}
+            <DropdownContextProvider>
+                <Dropdown title="select year"/>
+            </DropdownContextProvider>
         </div>
     )
 }

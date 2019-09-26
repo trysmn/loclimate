@@ -7,8 +7,10 @@ function Dropdown(props) {
     const [value, setValue] = useState(props.title);
     const climateJson = require('../../climate_data');
     const months = Object.keys(climateJson[Object.keys(climateJson)[0]]);
-    // const years = Object.keys(climateJson);
+    const years = Object.keys(climateJson);
     const { isDropdownOpen, handleClick } = useContext(DropdownContext);
+
+    const dataItems = props.title === "select month" ? months : years
 
     return (
         <div>
@@ -17,7 +19,7 @@ function Dropdown(props) {
                 ? <FontAwesomeIcon icon={faAngleDown} />
                 : <FontAwesomeIcon icon={faAngleUp} />
             }
-            {isDropdownOpen && months.map((item) =>
+            {isDropdownOpen && dataItems.map((item) =>
                 (<button key={item} onClick={() => setValue(item)}>{item}</button>))
             }
         </div>
