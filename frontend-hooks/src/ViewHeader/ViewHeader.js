@@ -7,8 +7,11 @@ function ViewHeader () {
     return (
         <div>
             <Location />
-            <DropdownContextProvider title="select month">
-                <Dropdown />
+            <DropdownContextProvider>
+                <Dropdown title="select month"/>
+            </DropdownContextProvider>
+            <DropdownContextProvider>
+                <Dropdown title="select year"/>
             </DropdownContextProvider>
         </div>
     )
