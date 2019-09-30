@@ -1,7 +1,9 @@
 import React from 'react';
 
 function Submit(props) {
-    const handleClick = () => props.setIsSubmitClicked(true);
+    const areDropdownsSelected = props.month !== "select month" && props.year !== "select year";
+
+    const handleClick = () => areDropdownsSelected && props.setIsSubmitClicked(true);
 
     return (
         <div>
