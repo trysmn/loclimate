@@ -1,8 +1,12 @@
 import React from 'react';
 
-function Submit() {
+function Submit(props) {
+    const handleClick = () => props.setIsSubmitClicked(true);
+
     return (
-        <button data-testid="test-submit-id">submit</button>
+        <div>
+            <button onClick={handleClick} data-testid="test-submit-id">submit</button>
+        </div>
     )
 }
 

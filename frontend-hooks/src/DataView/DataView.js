@@ -1,10 +1,12 @@
 import React from "react";
 import Metric from "./Metric";
 
-function DataView() {
+function DataView(props) {
     return (
         <div>
-            <Metric />
+            {props.isSubmitClicked && <div data-testid="data-view">
+                <Metric />
+            </div>}
         </div>
     )
 }
