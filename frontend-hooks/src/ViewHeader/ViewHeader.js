@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Location from "./Location/Location";
 import DropdownContextProvider from "../contexts/DropdownContext";
 import Dropdown from "./Dropdown/Dropdown";
 import Submit from "./Submit/Submit";
+import {DataContext} from "../contexts/DataContext";
 
 function ViewHeader(props) {
+    const { months, years } = useContext(DataContext);
     const [monthValue, setMonthValue] = useState("select month");
     const [yearValue, setYearValue] = useState("select year");
-    const climateJson = require('../climate_data');
-    const months = Object.keys(climateJson[Object.keys(climateJson)[0]]);
-    const years = Object.keys(climateJson);
 
     return (
         <div>
