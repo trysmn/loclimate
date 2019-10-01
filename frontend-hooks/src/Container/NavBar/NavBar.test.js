@@ -12,4 +12,4 @@ describe("NavBar", () => {
         // Then
         expect(appTitle.textContent).toBe(title);
     })
-})
+});

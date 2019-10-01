@@ -6,7 +6,7 @@ import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 function Dropdown(props) {
     const { isDropdownOpen, handleClick } = useContext(DropdownContext);
     const dataItems = props.title === "select month" ? props.months : props.years;
-    const title = `dropdown-${props.title}`
+    const title = `dropdown-${props.title}`;
 
     return (
         <div>
